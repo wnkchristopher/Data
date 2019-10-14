@@ -8,7 +8,7 @@ class MatrixTransmitter:
         self.protoMatrix = Matrix_pb2.ProtoMatrix()
         self.convertData(squareMatrix)
 
-        quotesFile = open("puzzle.bin", "wb")
+        quotesFile = open("puzzle_unsolved.bin", "wb")
         quotesFile.write(self.protoMatrix.SerializeToString())
         quotesFile.close()
 
