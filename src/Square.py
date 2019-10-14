@@ -18,4 +18,19 @@ class Square:
     def removeNotNeighbour(self, x, y):
         i = self.notNeighbours.remove([x,y])
 
+    def getX(self):
+        return self.x
+
+    def getY(self):
+        return self.y
+
+    def getValue(self):
+        return self.value
+
+    def getNeighbours(self):
+        return self.neighbours
+
+    def getNotNeighbours(self):
+        return self.notNeighbours
+
 

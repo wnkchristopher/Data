@@ -1,5 +1,8 @@
 from src.Read import Read
+from src.MatrixTransmitter import MatrixTransmitter
 from src.SquareMatrix import SquareMatrix
 
-Read("puzzle_unsolved.txt")
-SquareMatrix(5)
+reader = Read("puzzle_unsolved.txt")
+matrix = reader.getMatrix()
+
+transmitter = MatrixTransmitter(matrix)

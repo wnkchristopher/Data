@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message ProtoSquare {
+
+    message Coordinate {
+        int32 x = 1;
+        int32 y = 2;
+    }
+
+    Coordinate position = 1;
+    int32 value = 2;
+    repeated Coordinate neighbours = 3;
+    repeated Coordinate notNeighbours = 4;
+}
+
+message ProtoMatrix {
+    int32 size = 1;
+    repeated ProtoSquare squares = 2;
+}

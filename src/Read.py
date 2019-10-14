@@ -6,7 +6,6 @@ class Read:
 
     def __init__(self, filename):
         self.readFile(filename)
-        self.matrix.printIt()
 
     def readFile(self, filename):
         f = open("../" + filename, "r")
@@ -51,3 +50,6 @@ class Read:
                 self.matrix.getSquare(x, y).addNeighbour(x, y+1)
                 self.matrix.getSquare(x, y+1).addNeighbour(x, y)
             x += 1
+
+    def getMatrix(self):
+        return self.matrix

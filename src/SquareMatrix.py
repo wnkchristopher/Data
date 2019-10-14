@@ -42,3 +42,9 @@ class SquareMatrix:
                 s = s + str(square.value) + "(" + str(len(square.neighbours)) + ")    "
             print(s)
             print("--------------------------------------")
+
+    def getSize(self):
+        return self.size
+
+    def getAllSquares(self):
+        return self.allSquares
