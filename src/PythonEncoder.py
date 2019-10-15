@@ -3,23 +3,30 @@ from Matrix_pb2 import ProtoSquare
 import Matrix_pb2
 
 class MatrixTransmitter:
-    def __init__(self, squareMatrix):
-        # create empty matrix
-        self.protoMatrix = Matrix_pb2.ProtoMatrix()
-        self.convertData(squareMatrix)
+    def __init__(self, allMatrices):
+
+        self.protoMatrices = Matrix_pb2.ProtoAllMatrices()
+        self.convertData(allMatrices)
 
         quotesFile = open("puzzle_unsolved.bin", "wb")
-        quotesFile.write(self.protoMatrix.SerializeToString())
+        quotesFile.write(self.protoMatrices.SerializeToString())
         quotesFile.close()
 
-    def convertData(self, squareMatrix):
-        self.protoMatrix.size = squareMatrix.size
+    def convertData(self, allMatrices):
+        self.protoMatrices.quantity = len(allMatrices)
 
-        for square in squareMatrix.getAllSquares():
-            self.addSquare(square)
+        for matrix in allMatrices:
+            self.addMatrix(matrix)
 
-    def addSquare(self, square):
-        protoSquare = self.protoMatrix.squares.add()
+
+    def addMatrix(self, matrix):
+        protoMatrix = self.protoMatrices.matrices.add()
+        protoMatrix.size = matrix.getSize()
+        for square in matrix.getAllSquares():
+            self.addSquare(square, protoMatrix)
+
+    def addSquare(self, square, protoMatrix):
+        protoSquare = protoMatrix.squares.add()
         protoSquare.value = square.getValue()
         protoSquare.position.x = square.getX()
         protoSquare.position.y = square.getY()

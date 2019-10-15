@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cMatrix.proto\"\xc8\x01\n\x0bProtoSquare\x12)\n\x08position\x18\x01 \x01(\x0b\x32\x17.ProtoSquare.Coordinate\x12\r\n\x05value\x18\x02 \x01(\x05\x12+\n\nneighbours\x18\x03 \x03(\x0b\x32\x17.ProtoSquare.Coordinate\x12.\n\rnotNeighbours\x18\x04 \x03(\x0b\x32\x17.ProtoSquare.Coordinate\x1a\"\n\nCoordinate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\":\n\x0bProtoMatrix\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x1d\n\x07squares\x18\x02 \x03(\x0b\x32\x0c.ProtoSquareb\x06proto3')
+  serialized_pb=_b('\n\x0cMatrix.proto\"\xc8\x01\n\x0bProtoSquare\x12)\n\x08position\x18\x01 \x01(\x0b\x32\x17.ProtoSquare.Coordinate\x12\r\n\x05value\x18\x02 \x01(\x05\x12+\n\nneighbours\x18\x03 \x03(\x0b\x32\x17.ProtoSquare.Coordinate\x12.\n\rnotNeighbours\x18\x04 \x03(\x0b\x32\x17.ProtoSquare.Coordinate\x1a\"\n\nCoordinate\x12\t\n\x01x\x18\x01 \x01(\x05\x12\t\n\x01y\x18\x02 \x01(\x05\":\n\x0bProtoMatrix\x12\x0c\n\x04size\x18\x01 \x01(\x05\x12\x1d\n\x07squares\x18\x02 \x03(\x0b\x32\x0c.ProtoSquare\"D\n\x10ProtoAllMatrices\x12\x10\n\x08quantity\x18\x01 \x01(\x05\x12\x1e\n\x08matrices\x18\x02 \x03(\x0b\x32\x0c.ProtoMatrixb\x06proto3')
 )
 
 
@@ -152,13 +152,53 @@ _PROTOMATRIX = _descriptor.Descriptor(
   serialized_end=277,
 )
 
+
+_PROTOALLMATRICES = _descriptor.Descriptor(
+  name='ProtoAllMatrices',
+  full_name='ProtoAllMatrices',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='quantity', full_name='ProtoAllMatrices.quantity', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='matrices', full_name='ProtoAllMatrices.matrices', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=279,
+  serialized_end=347,
+)
+
 _PROTOSQUARE_COORDINATE.containing_type = _PROTOSQUARE
 _PROTOSQUARE.fields_by_name['position'].message_type = _PROTOSQUARE_COORDINATE
 _PROTOSQUARE.fields_by_name['neighbours'].message_type = _PROTOSQUARE_COORDINATE
 _PROTOSQUARE.fields_by_name['notNeighbours'].message_type = _PROTOSQUARE_COORDINATE
 _PROTOMATRIX.fields_by_name['squares'].message_type = _PROTOSQUARE
+_PROTOALLMATRICES.fields_by_name['matrices'].message_type = _PROTOMATRIX
 DESCRIPTOR.message_types_by_name['ProtoSquare'] = _PROTOSQUARE
 DESCRIPTOR.message_types_by_name['ProtoMatrix'] = _PROTOMATRIX
+DESCRIPTOR.message_types_by_name['ProtoAllMatrices'] = _PROTOALLMATRICES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ProtoSquare = _reflection.GeneratedProtocolMessageType('ProtoSquare', (_message.Message,), {
@@ -182,6 +222,13 @@ ProtoMatrix = _reflection.GeneratedProtocolMessageType('ProtoMatrix', (_message.
   # @@protoc_insertion_point(class_scope:ProtoMatrix)
   })
 _sym_db.RegisterMessage(ProtoMatrix)
+
+ProtoAllMatrices = _reflection.GeneratedProtocolMessageType('ProtoAllMatrices', (_message.Message,), {
+  'DESCRIPTOR' : _PROTOALLMATRICES,
+  '__module__' : 'Matrix_pb2'
+  # @@protoc_insertion_point(class_scope:ProtoAllMatrices)
+  })
+_sym_db.RegisterMessage(ProtoAllMatrices)
 
 
 # @@protoc_insertion_point(module_scope)

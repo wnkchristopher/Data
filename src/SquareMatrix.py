@@ -2,9 +2,9 @@ from src.Square import Square
 
 
 class SquareMatrix:
-    allSquares = []
 
     def __init__(self, size):
+        self.allSquares = []
         self.size = size
         for x in range(1, size + 1):
             for y in range(1, size + 1):
