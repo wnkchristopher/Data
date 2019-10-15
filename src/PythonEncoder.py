@@ -35,5 +35,5 @@ class MatrixTransmitter:
     def addNotNeighbours(self, notNeighbours, protoSquare):
         for notNeighbour in notNeighbours:
             protoNotNeighbour = protoSquare.notNeighbours.add()
-            protoNotNeighbour = notNeighbour[0]
-            protoNotNeighbour = notNeighbour[1]
+            protoNotNeighbour.x = notNeighbour[0]
+            protoNotNeighbour.y = notNeighbour[1]
