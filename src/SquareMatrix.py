@@ -8,7 +8,7 @@ class SquareMatrix:
         self.size = size
         for x in range(1, size + 1):
             for y in range(1, size + 1):
-                self.addSquare(x, y, -1)
+                self.addSquare(x, y, 0)
 
     def addSquare(self, x, y, value):
         listNotNeighbours = []
